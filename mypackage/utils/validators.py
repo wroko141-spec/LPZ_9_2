@@ -48,6 +48,23 @@ def validate_name(name):
 
     return True, "Имя корректно"
 
+def validate_student_name(first_name, last_name):
+
+    for name, label in [(first_name, "Имя"), (last_name, "Фамилия")]:
+        if not name or not isinstance(name, str):
+            return False, f"{label} не может быть пустым"
+
+        # допускаем дефис
+        cleaned = name.replace("-", "")
+
+        if not cleaned.isalpha():
+            return False, f"{label} должно содержать только буквы"
+
+        if not name[0].isupper():
+            return False, f"{label} должно начинаться с заглавной буквы"
+
+    return True, "Имя и фамилия корректны"
+
 
 if __name__ == "__main__":
     test_emails = ["wroko141@mail.ru", "nevern_email", "student@domen", "a@b.c"]

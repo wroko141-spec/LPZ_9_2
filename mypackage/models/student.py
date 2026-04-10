@@ -28,6 +28,19 @@ class Student:
         print(f"Оценка {grade} по предмету '{subject}' добавлена")
         return True
 
+
+    def add_multiple_grades(self, grades_list):
+        success_count = 0
+
+        for item in grades_list:
+            grade = item.get("grade")
+            subject = item.get("subject", "General")
+
+            if self.add_grade(grade, subject):
+                success_count += 1
+
+        return success_countм
+
     def get_average_grade(self):
         if not self.grades:
             return 0
