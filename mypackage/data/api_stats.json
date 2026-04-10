@@ -1,0 +1,6 @@
+{
+  "total_requests": 1,
+  "last_response_code": 200,
+  "base_url": "https://jsonplaceholder.typicode.com",
+  "timeout": 10
+}
